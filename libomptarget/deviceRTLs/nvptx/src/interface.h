@@ -88,6 +88,36 @@ EXTERN int omp_is_initial_device(void);
 EXTERN int omp_get_initial_device(void);
 EXTERN int omp_get_max_task_priority(void);
 
+
+#ifdef FLANG_API
+EXTERN double omp_get_wtick_(void);
+EXTERN double omp_get_wtime_(void);
+EXTERN int omp_get_num_threads_(void);
+EXTERN int omp_get_max_threads_(void);
+EXTERN int omp_get_thread_limit_(void);
+EXTERN int omp_get_thread_num_(void);
+EXTERN int omp_get_num_procs_(void);
+EXTERN int omp_in_parallel_(void);
+EXTERN int omp_in_final_(void);
+EXTERN int omp_get_nested_(void);
+EXTERN int omp_get_max_active_levels_(void);
+EXTERN int omp_get_level_(void);
+EXTERN int omp_get_active_level_(void);
+EXTERN int omp_get_ancestor_thread_num_(int level);
+EXTERN int omp_get_team_size_(int level);
+EXTERN int omp_get_default_device_(void);
+EXTERN int omp_get_num_devices_(void);
+EXTERN int omp_get_num_teams_(void);
+EXTERN int omp_get_team_num_(void);
+EXTERN void omp_get_schedule_(omp_sched_t *kind, int *modifier);
+EXTERN int omp_get_initial_device_(void);
+EXTERN int omp_get_max_task_priority_(void);
+EXTERN int omp_get_cancellation_(void);
+EXTERN int omp_get_dynamic_(void);
+EXTERN void omp_lib_osnt4_(int num);
+EXTERN void omp_lib_osmal4_(int level);
+#endif
+
 ////////////////////////////////////////////////////////////////////////////////
 // OMPTARGET_NVPTX private (debug / temportary?) interface
 ////////////////////////////////////////////////////////////////////////////////

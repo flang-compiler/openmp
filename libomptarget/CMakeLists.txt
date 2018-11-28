@@ -53,6 +53,13 @@ if(LIBOMPTARGET_CMAKE_BUILD_TYPE MATCHES debug)
   add_definitions(-O0)
 endif()
 
+set(LIBOMPTARGET_FLANG_API FALSE CACHE BOOL
+        "Build API for Flang.")
+if(${LIBOMPTARGET_FLANG_API})
+  add_definitions(-DFLANG_API)
+  libomptarget_say("Building OpenMP API for FLANG.")
+endif()
+
 include_directories(include)
 
 # Build target agnostic offloading library.

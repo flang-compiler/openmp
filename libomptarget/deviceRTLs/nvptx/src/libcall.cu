@@ -460,3 +460,67 @@ EXTERN void xlf_debug_print_double(double *p) {
 EXTERN void xlf_debug_print_addr(void *p) {
   printf("xlf DEBUG %d): %p \n", omp_get_team_num(), p);
 }
+
+
+#ifdef FLANG_API
+EXTERN double omp_get_wtick_(void) { return omp_get_wtick(); }
+
+EXTERN double omp_get_wtime_(void) { return omp_get_wtime(); }
+
+EXTERN int omp_get_num_threads_(void) { return omp_get_num_threads(); }
+
+EXTERN int omp_get_max_threads_(void) { return omp_get_max_threads(); }
+
+EXTERN int omp_get_thread_limit_(void) { return omp_get_thread_limit(); }
+
+EXTERN int omp_get_thread_num_(void) { return omp_get_thread_num(); }
+
+EXTERN int omp_get_num_procs_(void) { return omp_get_num_procs(); }
+
+EXTERN int omp_in_parallel_(void) { return omp_in_parallel(); }
+
+EXTERN int omp_in_final_(void) { return omp_in_final(); }
+
+EXTERN int omp_get_nested_(void) { return omp_get_nested(); }
+
+EXTERN int omp_get_max_active_levels_(void) {
+  return omp_get_max_active_levels();
+}
+
+EXTERN int omp_get_level_(void) { return omp_get_level(); }
+
+EXTERN int omp_get_active_level_(void) { return omp_get_active_level(); }
+
+EXTERN int omp_get_ancestor_thread_num_(int* level) {
+  return omp_get_ancestor_thread_num(*level);
+}
+
+EXTERN int omp_get_team_size_(int* level) { return omp_get_team_size(*level); }
+
+EXTERN int omp_get_default_device_(void) { return omp_get_default_device(); }
+
+EXTERN int omp_get_num_devices_(void) { return omp_get_num_devices(); }
+
+EXTERN int omp_get_num_teams_(void) { return omp_get_num_teams(); }
+
+EXTERN int omp_get_team_num_(void) { return omp_get_team_num(); }
+
+EXTERN void omp_get_schedule_(omp_sched_t *kind, int *modifier) {
+  return omp_get_schedule(kind, modifier);
+}
+
+EXTERN int omp_get_initial_device_(void) { return omp_get_initial_device(); }
+
+EXTERN int omp_get_max_task_priority_(void) {
+  return omp_get_max_task_priority();
+}
+
+EXTERN int omp_get_cancellation_(void) { return omp_get_cancellation(); }
+
+EXTERN int omp_get_dynamic_(void) { return omp_get_dynamic(); }
+
+EXTERN void omp_lib_osnt4_(int* num) { omp_set_num_threads(*num); }
+
+EXTERN void omp_lib_osmal4_(int* level) { omp_set_max_active_levels(*level); }
+#endif
+
